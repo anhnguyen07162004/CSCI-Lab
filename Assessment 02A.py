@@ -18,11 +18,11 @@ print("Input the second operand.")
 num2 = float(input("SECOND> "))
 
 # Creating outputs
-sum = num1 + num2
-diff = num1 - num2
-prod = num1 * num2
+sum = round((num1 + num2), 1)
+diff = round((num1 - num2), 1)
+prod = round((num1 * num2), 1)
 quotient = round((num1 / num2))
-remainder = round((num1 % num2))
+remainder = (num1 % num2)
 
 # Printing outputs
 print("OUTPUT ", sum)
