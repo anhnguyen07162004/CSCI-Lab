@@ -4,6 +4,7 @@
 # Searched up why my float wasn't rounding to 2 decimal places
 # Time: 15 minutes
 
+import math
 # Variables for operators
 sum = 0.0
 diff = 0.0
@@ -21,7 +22,7 @@ num2 = float(input("SECOND> "))
 sum = round((num1 + num2), 1)
 diff = round((num1 - num2), 1)
 prod = round((num1 * num2), 1)
-quotient = round((num1 / num2))
+quotient = math.floor(num1 / num2)
 remainder = (num1 % num2)
 
 # Printing outputs
