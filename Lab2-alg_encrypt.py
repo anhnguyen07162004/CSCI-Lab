@@ -28,4 +28,4 @@ l4 = "".join(l4)
 l5_half_int = int(len(l5) / 2)
 l5_front_half = l5[:-(l5_half_int)]
 l5_back_half = l5[-(l5_half_int):]
-print(l5_front_half + " " + l1 + l2 + l3 + l4 + " " + l5_back_half)
+print("OUTPUT " + l5_front_half + " " + l1 + l2 + l3 + l4 + " " + l5_back_half)
