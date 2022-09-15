@@ -9,10 +9,10 @@ print("Enter the Tweet or Message abbreviation to decode.")
 tweet = input("TWEET> ")
 
 if tweet == "BTW":
-  print("OUTPUT By the way")
+  print("OUTPUT BTW = By the way")
 elif tweet == "DM":
-  print("OUTPUT Direct message")
+  print("OUTPUT DM = Direct message")
 elif tweet == "AFAIK":
-  print("OUTPUT As far as i know")
+  print("OUTPUT AFAIK = As far as i know")
 elif tweet == "IDK":
-  print("OUTPUT I don't know")
+  print("OUTPUT IDK = I don't know")
