@@ -21,4 +21,6 @@ elif op == 3:
   print("OUTPUT ", prod)
 else:
   quotient = num1 / num2
+  rem = num1 % num2
   print("OUTPUT ", quotient)
+  print("OUTPUT ", rem)
