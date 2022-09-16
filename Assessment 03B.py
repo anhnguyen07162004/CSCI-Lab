@@ -20,7 +20,7 @@ elif op == 3:
   prod = "%.6f" % round(num1 * num2, 6)
   print("OUTPUT ", prod)
 else:
-  quotient = num1 / num2
-  rem = num1 % num2
+  quotient = round(num1 / num2)
+  rem = round(num1 % num2)
   print("OUTPUT ", quotient)
   print("OUTPUT ", rem)
