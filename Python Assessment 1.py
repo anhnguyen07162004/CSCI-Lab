@@ -25,19 +25,31 @@ if hours_input - hours <= 0:
     if early > 60:
       early = early - 60
       mins = 60 - early
-      print("OUTPUT", hours2, mins)
+      if hours2 < 10:
+        print("OUTPUT", "0" + str(hours2), mins)
+      else:
+        print("OUTPUT", hours2, mins)
     else:
       mins = 60 - early
-      print("OUTPUT", hours2, mins)
+      if hours2 < 10:
+        print("OUTPUT", "0" + str(hours2), mins)
+      else:
+        print("OUTPUT", hours2, mins)
 else:
-  hours2 = hours_input
+  hours3 = hours_input
   if early > mins_input:
-    hours2 = hours2 - 1
+    hours3 = hours3 - 1
     early = early - mins_input
     if early > 60:
       early = early - 60
       mins = 60 - early
-      print("OUTPUT", hours2, mins)
+      if hours3 < 10:
+        print("OUTPUT", "0" + str(hours3), mins)
+      else:
+        print("OUTPUT", hours3, mins)
     else:
       mins = 60 - early
-      print("OUTPUT", hours2, mins)
+      if hours3 < 10:
+        print("OUTPUT", "0" + str(hours3), mins)
+      else:
+        print("OUTPUT", hours3, mins)
