@@ -33,6 +33,9 @@ while run == True:
     run = False
   elif choice == 2:
     dec_str = input("DECIMAL-STR> ")
+    if dec_str[0] == "0":
+      print("OUTPUT 0")
+      break
     if (dec_str.count("0") + dec_str.count("1") + dec_str.count("2") + dec_str.count("3") + dec_str.count("4") + dec_str.count("5") + dec_str.count("6") + dec_str.count("7") + dec_str.count("8") + dec_str.count("9") != len(dec_str)):
       print("OUTPUT ERROR")
       break
