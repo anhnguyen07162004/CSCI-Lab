@@ -1,7 +1,7 @@
 # Anh Nguyen
 # CSCI 101 - Section G
 # Assessment 2
-# References: Professor showed how to know if a string has invalid input
+# References: Professor showed how to know if a string has invalid input, searched how to reverse a list
 # Time: 3 hours
 
 run = True # Used so I can put everything in a loop and break out when needed
@@ -19,7 +19,7 @@ while run == True:
   if choice == 1:
     binary_str = input("BINARY-STR> ")
     if (binary_str.count("0") + binary_str.count("1")) != len(binary_str):
-      print(binary_str, "is not a Binary number")
+      print("OUTPUT ERROR")
       break
     else:
       length = len(binary_str)
@@ -34,7 +34,7 @@ while run == True:
   elif choice == 2:
     dec_str = input("DECIMAL-STR> ")
     if (dec_str.count("0") + dec_str.count("1") + dec_str.count("2") + dec_str.count("3") + dec_str.count("4") + dec_str.count("5") + dec_str.count("6") + dec_str.count("7") + dec_str.count("8") + dec_str.count("9") != len(dec_str)):
-      print(dec_str, "is not a Decimal number")
+      print("OUTPUT ERROR")
       break
     else:
       int_dec_str = int(dec_str)
