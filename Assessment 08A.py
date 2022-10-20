@@ -24,4 +24,4 @@ for j in range(0, rolls):
 
 # Printing outputs from list
 for v in range(0, len(roll_list)):
-  print(f"OUTPUT {v+1} occured {roll_list[v]} times")
+  print(f"OUTPUT {v+1} occurred {roll_list[v]} times")
