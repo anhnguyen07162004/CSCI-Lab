@@ -25,7 +25,7 @@ with open("dictionary.txt", 'r', encoding='utf-8') as dictionary_file:
 print("OUTPUT", len(word_bank))
 
 if len(word_bank) == 0:
-  print("OUTPUT", 0)
+  print("OUTPUT None")
 else:
   random.seed(seed)
   word = random.choice(word_bank)
