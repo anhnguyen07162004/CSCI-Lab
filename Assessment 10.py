@@ -33,6 +33,6 @@ with open("formations.csv", "r") as formations:
       
       parse_writer.writerow([depth_range] + [start_depth] + [end_depth] + [depth_diff] + [form] + [age])
       
-with open("formations_parsed.csv", "r") as test:
-  contents = test.read()
-  print(contents)
+# with open("formations_parsed.csv", "r") as test:
+#   contents = test.read()
+#   print(contents)
