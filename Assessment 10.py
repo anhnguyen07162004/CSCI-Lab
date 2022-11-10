@@ -31,7 +31,7 @@ with open("formations.csv", "r") as formations:
       else:
         age = "Cretaceous"
       
-      parse_writer.writerow([depth_range] + [start_depth] + [end_depth] + [depth_diff] + [form] + [age])
+      parse_writer.writerow([depth_range] + [start_depth] + [end_depth] + [f'{depth_diff:.2f}'] + [form] + [age])
       
 # with open("formations_parsed.csv", "r") as test:
 #   contents = test.read()
