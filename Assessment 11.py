@@ -20,8 +20,8 @@ def lbs_to_kg(num):
 def polar_coords(x, y):
   r_num = math.sqrt((x ** 2) + (y ** 2))
   theta_num = math.degrees(math.atan(y/x))
-  print_output(f"{r_num:.2f}")
-  print_output(f"{theta_num:.2f}")
+  print_output(f"r: {r_num:.2f}")
+  print_output(f"theta: {theta_num:.2f}")
 
 def yen_to_dollars(yen):
   yen = yen * 0.0068
@@ -45,3 +45,5 @@ def quad_form(a, b, c):
 
   print_output(f"{int(small)}")
   print_output(f"{int(big)}")
+
+polar_coords(12, 5)
