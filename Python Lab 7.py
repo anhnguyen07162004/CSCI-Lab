@@ -19,6 +19,9 @@
 # some variety into our code. You'll use it yourselves later this term.
 import random
 
+wins = 0
+losses = 0
+
 # Prints welcome message
 print("Welcome to Wordle!")
 print("Here you will provide the length of the words you want to play with and")
@@ -257,15 +260,20 @@ print("Game over.")
 
 # Print statements without OUTPUT aren't graded, but they are helpful.
 # Checks the game_result and tells the player
-# if game_result == "Won":
-#     print(f"Congratulations!")
-#     print(f"You guessed the word '{secret_word}' in {num_guesses_used} guesses!")
-#     print("You win!")
-# elif game_result == "Lost":
-#     print(f"You were not able to guess the word '{secret_word}'.")
-#     print("You lose.")
+if game_result == "Won":
+    print(f"Congratulations!")
+    print(f"You guessed the word '{secret_word}' in {num_guesses_used} guesses!")
+    print("You win!")
+    wins += 1
+elif game_result == "Lost":
+    print(f"You were not able to guess the word '{secret_word}'.")
+    print("You lose.")
+    losses += 1
 
 # Prints the outputs
 print(f"OUTPUT {secret_word}")
 print(f"OUTPUT {game_result}")
+print("OUTPUT", wins)
+print("OUTPUT", losses)
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
