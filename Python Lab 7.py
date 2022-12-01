@@ -54,7 +54,7 @@ while play == True:
     secret = random.choice(word_bank)
     guess = input("GUESS> ")
     print(gen_guess_result(guess, secret, length))
-    
+    num_guesses_used += 1
 
 
 print("OUTPUT", wins)
