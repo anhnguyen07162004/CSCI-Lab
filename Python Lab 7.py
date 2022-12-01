@@ -33,8 +33,11 @@ def gen_guess_result(new_guess, secret_word, word_length):
       secret_list[i] = "_"
       continue
     else:
-      result_list[i] = "o"
-      continue
+      for j in range(len(secret_list)):
+        if new_guess[i] == secret_list[j]:
+          result_list[i] = "o"
+          secret_list[j] = "_"
+          break
   return result_list
 
 seed = input("SEED> ")
