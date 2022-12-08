@@ -1,110 +1,62 @@
 # Anh Nguyen
-# Section G
-# Lab 7 - Wordle Redux
-# References: Wordle Lab
-# Time: 5 hours
+# CSCI 102 Section B
+# Assessment 13
+# References: Google for ord function, Asked for help with decrypt function online
+# Time: 3-4 hours
 
-import random
+def encrypt(text, shift):
+  encrypted_text = ""
 
-word_bank = []
-
-guess_list = []
-
-valid_lengths = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-                 15, 16, 17, 18, 19, 20, 21, 22, 24, 28, 29]
-
-wins = 0
-losses = 0
-num_guesses_used = 0
-
-def get_word_bank(word_length):
-  with open("dictionary.txt", 'r', encoding='utf-8') as dictionary_file:
-    for line in dictionary_file:
-      line = line.strip()
-      if len(line) == word_length:
-        word_bank.append(line)
-  return word_bank
-
-def gen_guess_result(new_guess, secret_word, word_length):
-  secret_list = list(secret_word)
-  for i in range(len(new_guess)):
-    if new_guess[i] == secret_list[i]:
-      result_list[i] = "x"
-      secret_list[i] = "_"
-      continue
+  for char in text:
+    if char.isalpha():
+      if char.isupper():
+        shifted_char = chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+      else:
+        shifted_char = chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
     else:
-      for j in range(len(secret_list)):
-        if new_guess[i] == secret_list[j]:
-          result_list[i] = "o"
-          secret_list[j] = "_"
-          break
-  print(f"OUTPUT {' '.join(result_list)}")
+      shifted_char = char
+    encrypted_text += shifted_char
+  print("OUTPUT", encrypted_text)
 
-def get_guess(guess_list, word_length, word_bank):
-    guess_is_valid = False
-    while not guess_is_valid:
-        # Collects a new guess from the player
-        new_guess = input("GUESS> ")
+def decrypt(encrypted_text):
 
-        # Forces all letters to lowercase, just in case
-        new_guess = new_guess.lower()
+  for shift in range(1, 26):
+    decrypted_text = ""
+    for i, char in enumerate(encrypted_text):
+      char_index = ord(char) - ord('A')
+      decrypted_char_index = (char_index - (shift - i) % 26) % 26
+      decrypted_char = chr(decrypted_char_index + ord('A'))
 
-        # Checks new_guess length
-        if len(new_guess) != word_length:
-            print(f"Please enter a {word_length}-letter word.")
+      decrypted_text += decrypted_char
 
-        # Checks if new_guess is a real word
-        elif new_guess not in word_bank:
-            print(f"Please enter a real word.")
+    if decrypted_text.isalpha():
+      print("OUTPUT", decrypted_text)
+      print("OUTPUT", shift)
+      break
 
-        # Checks if new_guess has been used before
-        elif new_guess in guess_list:
-            print(f"Please enter a word you haven't guessed yet.")
+
+if __name__ == "__main__":
+    print(
+        "Welcome to our Caesar Cipher Algorithm!\n" +
+        "Choose one of the following methods:\n" +
+        "\t1 - Encryption\n" +
+        "\t2 - Decryption"
+    )
+    while True:
+        userIn = str(input("OPERATION> "))
+
+        # If the user inputs 1, for encryption
+        if userIn == "1":
+            str = input("MESSAGE> ")
+            shift = int(input("SHIFT> "))
+            encrypt(str, shift)
+            break
+
+        # If the user inputs 2, for encryption
+        elif userIn == "2":
+            str2 = input("MESSAGE_TO_DECRYPT> ")
+            decrypt(str2)
+            break
 
         else:
-            guess_is_valid = True
-        guess_list.append(new_guess)
-    return new_guess
-
-if __name__ == '__main__':
-  seed = input("SEED> ")
-  random.seed(seed)
-  length_is_valid = False
-  while not length_is_valid:
-    # TODO: Ask player for the INTEGER length of word to play with
-    word_length = int(input("LENGTH> "))
-
-    # Checks if words of the requested length exist in our dictionary
-    if word_length in valid_lengths:
-      length_is_valid = True
-
-  word_bank = get_word_bank(word_length)
-  secret_word = random.choice(word_bank)
-  result_list = list('_' * word_length)
-  game_result = ""
-  play = True
-  while play == True:
-    while game_result == "":
-      user_guess = get_guess(guess_list, word_length, word_bank)
-      gen_guess_result(user_guess, secret_word, word_length)
-      num_guesses_used += 1
-      print(result_list.count("x"))
-      if result_list.count("x") == len(result_list):
-        game_result = "Won"
-        wins += 1
-        print("OUTPUT", secret_word)
-        print("OUTPUT Won")
-      elif num_guesses_used == 6:
-        game_result = "Lost"
-        losses += 1
-        print("OUTPUT", secret_word)
-        print("OUTPUT Lost")
-    choice = input("CONTINUE> ")
-    if choice == "Yes":
-      play = True
-    else:
-      play = False
-    game_result = ""
-    secret_word = random.choice(word_bank)
-  print("OUTPUT", wins)
-  print("OUTPUT", losses)
+            print("Invalid Operation!")
